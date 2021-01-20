@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 471}
   m_MaxSize: {x: 14001, y: 14021}
   vertical: 0
-  controlID: 176
+  controlID: 26063
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 177
+  controlID: 26064
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 245
+  controlID: 26065
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,10 +398,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 56fbffff
+      scrollPos: {x: 0, y: 754}
+      m_SelectedIDs: fa0affff
+      m_LastClickedID: -62726
+      m_ExpandedIDs: 9029ffff76f8ffff56fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -462,9 +462,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 37.979004, y: -5.7488327, z: -123.11723}
+    m_Target: {x: -30.858704, y: -13.122128, z: -282.97943}
     speed: 2
-    m_Value: {x: 37.979004, y: -5.7488327, z: -123.11723}
+    m_Value: {x: -30.858704, y: -13.122128, z: -282.97943}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -511,13 +511,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.35341647, y: -0.052983478, z: 0.02007931, w: 0.93380654}
+    m_Target: {x: -0.062174655, y: 0.9206407, z: -0.163504, w: -0.34934947}
     speed: 2
-    m_Value: {x: 0.3547976, y: -0.052950427, z: 0.020157687, w: 0.93322486}
+    m_Value: {x: -0.062167704, y: 0.92053777, z: -0.16348572, w: -0.3493104}
   m_Size:
-    m_Target: 82.51015
+    m_Target: 65.21666
     speed: 2
-    m_Value: 86.39806
+    m_Value: 65.21666
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -596,8 +596,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
-    m_ClassNames:
-    - Material
+    m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
     m_VersionControlStates: []
@@ -606,22 +605,23 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
-    m_Folders: []
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Materials
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\User\Downloads\gam300prototype-master\gam300prototype-master\GAM300_LEVEL\GAM300_LEVEL
+  m_LastProjectPath: C:\Users\User\Desktop\GAM300Prototype\gam300_prototype\GAM300_LEVEL
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 01ca9a3b
-    m_LastClickedID: 1000000001
+    m_SelectedIDs: 6e3b0000
+    m_LastClickedID: 15214
     m_ExpandedIDs: 000000006a3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
