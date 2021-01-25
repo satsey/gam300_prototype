@@ -1,0 +1,7 @@
+order 3,2,1
+
+store in list, match.
+
+destroy ball script
+
+Q swap ball
