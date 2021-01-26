@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    public GameObject woodProgressBar;
-    public Slider slider;
+
+    public Slider woodProgressBar;
     
 
     // player movement variables
@@ -20,14 +20,22 @@ public class PlayerController : MonoBehaviour
 
     // throwing ball
     public GameObject ball;
+    public GameObject woodball;
+
+
     public float ballforce = 30.0f;
     public Transform launchPos;
     public Transform cameraPos;
     // Start is called before the first frame update
+
+    public int currentBallSelection = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+
+        woodProgressBar.value = 0;
     }
 
     // Update is called once per frame
@@ -35,9 +43,28 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
-            ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+            if (currentBallSelection == 0)
+            {
+                GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
+                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+            }
+            else
+            {
+                GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
+                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+            }    
         }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if (woodProgressBar.value < 0.7f)
+                return;
+
+            if (currentBallSelection == 0)
+                currentBallSelection = 1;
+            else
+                currentBallSelection = 0;
+        }    
 
     }
 
@@ -68,12 +95,20 @@ public class PlayerController : MonoBehaviour
         //    transform.position.x + translation));
     }
 
-
+   
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Collectable"))
+
+        // when player touches a collectable
+
+        // check for other type 
+        if (other.CompareTag("Collectable"))
         {
+
+            
+
             Destroy(other.gameObject);
+            woodProgressBar.value += 0.25f;
         }
     }
 
