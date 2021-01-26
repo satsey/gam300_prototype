@@ -118,8 +118,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Models\Structures\IChangeEntryData.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Models\Structures\IChangeEntry.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Models\Structures\ProgressInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Settings\CollabSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Presenters\IPresenter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Settings\CollabSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Models\Structures\ErrorInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Components\ErrorPageView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Components\ChangesGroupHeader.cs" />

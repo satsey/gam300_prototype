@@ -61,8 +61,8 @@
     <Compile Include="Assets\Scripts\Puzzle2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\BallBehaviour.cs" />
-    <Compile Include="Assets\Scripts\WoodenShard.cs" />
     <Compile Include="Assets\Scripts\WallButtonAdjustPos.cs" />
+    <Compile Include="Assets\Scripts\WoodenShard.cs" />
     <Compile Include="Assets\Scripts\Puzzle1.cs" />
     <Compile Include="Assets\Scripts\WoodBall.cs" />
   </ItemGroup>

@@ -1,0 +1,23 @@
+
+
+https://github.com/microsoft/Windows-classic-samples/blob/1d363ff4bd17d8e20415b92e2ee989d615cc0d91/Samples/Win7Samples/multimedia/directshow/common/wincontrol.h
+
+https://www.bilibili.com/video/BV1zJ411g7P9?from=search&seid=15526492094954130621
+
+https://docs.microsoft.com/en-us/windows/win32/controls/create-a-simple-combo-box
+
+
+Gam300 in term of priority
+
+- Math Lib
+- 2D and 3D collision detection
+- Raycast
+
+
+- Editor Inspection of components 
+- debug drawing graphics side
+- Serialize/Deserialze (reflection)
+
+
+- Math API (vector3, transform, etc.. like )
+- rigidbody 3D ?
