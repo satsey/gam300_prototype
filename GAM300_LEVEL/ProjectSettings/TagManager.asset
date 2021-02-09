@@ -7,6 +7,14 @@ TagManager:
   - Collectable
   - Door
   - WoodProgressBar
+  - puzzle1box1
+  - puzzle1box2
+  - puzzle1box3
+  - puzzle2box1
+  - puzzle3box1
+  - puzzle3box2
+  - puzzle2box2
+  - puzzle2box3
   layers:
   - Default
   - TransparentFX
