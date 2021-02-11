@@ -5,8 +5,6 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public Transform theDest;
-    public GameObject target;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,34 +16,19 @@ public class PickUp : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
         if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit, 2))
         {
-            target = hit.collider.gameObject;
-            if (target.tag == "changable" || target.tag == "pickable")
-            {
-              target.GetComponent<BoxCollider>().enabled = false;
-              target.GetComponent<Rigidbody>().useGravity = false;
-              target.transform.position = theDest.position;
-              target.transform.parent = GameObject.Find("Destination").transform;
-            }
-
-            //if(target.tag == "pickable")
-            //{
-            //    target.transform.position = theDest.position;
-            //    target.transform.parent = GameObject.Find("Destination").transform;
-            //}
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<Rigidbody>().useGravity = false;
+            this.transform.position = theDest.position;
+            this.transform.parent = GameObject.Find("Destination").transform;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (target != null)
-            { 
-                target.transform.parent = null;
-                GetComponent<BoxCollider>().enabled = true;
-                GetComponent<Rigidbody>().useGravity = true;
-                target = null;
-            }
+            this.transform.parent = null;
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<BoxCollider>().enabled = true;
         }
     }
 }
