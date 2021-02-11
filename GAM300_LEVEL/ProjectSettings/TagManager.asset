@@ -15,6 +15,7 @@ TagManager:
   - puzzle3box2
   - puzzle2box2
   - puzzle2box3
+  - changable
   layers:
   - Default
   - TransparentFX

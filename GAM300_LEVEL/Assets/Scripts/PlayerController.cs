@@ -9,7 +9,24 @@ public class PlayerController : MonoBehaviour
 
 
     public Slider woodProgressBar;
-    
+
+    // Materials
+    // Wood
+    public Material mat1;
+    public float mass1 = 1;
+    //Metal
+    public Material mat2;
+    public float mass2 = 10;
+
+    // Selected material
+    public Material selectMat;
+    public float selectMass;
+
+    // Range
+    public float range = 10; // 2 per cube, 5*2 = 10
+
+    // Target to change
+    public GameObject target;
 
     // player movement variables
     public float speed = 10.0f;
@@ -32,17 +49,26 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        /*rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
 
-        woodProgressBar.value = 0;
+        woodProgressBar.value = 0;*/
+
+        // Set selected material & mass to wood(mat1)
+        selectMat = mat1;
+        selectMass = mass1;
+        target = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Looking at object & within range
+        //CheckSee();
+
+        if (Input.GetMouseButtonDown(0) && CheckSee() && target != null)
         {
+            /*
             if (currentBallSelection == 0)
             {
                 GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
@@ -52,7 +78,11 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
                 ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-            }    
+            }    */
+
+            // Change material
+            target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
@@ -66,6 +96,19 @@ public class PlayerController : MonoBehaviour
                 currentBallSelection = 0;
         }    
 
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("Select Wood");
+            selectMat = mat1;
+            selectMass = mass1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("Select Metal");
+            selectMat = mat2;
+            selectMass = mass2;
+        }
     }
 
 
@@ -73,6 +116,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -88,14 +132,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
         }
-
+        */
 
 
         //rb.MovePosition(new Vector3(transform.position.z + straffe, transform.position.y, 
         //    transform.position.x + translation));
+
+        
     }
 
-   
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -105,11 +151,33 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Collectable"))
         {
 
-            
-
             Destroy(other.gameObject);
             woodProgressBar.value += 0.25f;
         }
     }
 
+    // Helper function to check if its looking at an object
+    private bool CheckSee()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        // Will contain the information of which object the raycast hit
+        RaycastHit hit;
+
+        // if raycast hits, it checks if it hit an object with the tag changable
+        if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range) && hit.collider.gameObject.CompareTag("changable"))
+        {
+            if (target = hit.collider.gameObject)
+                return true;
+            else
+                return false;
+            
+        }
+        else
+        {
+            Debug.Log("Does not see anything");
+            return false;
+        }
+
+    }
 }
