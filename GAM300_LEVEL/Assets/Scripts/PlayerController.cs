@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
-
     public Slider woodProgressBar;
 
     // Materials
@@ -68,24 +66,30 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && CheckSee() && target != null)
         {
-            /*
-            if (currentBallSelection == 0)
-            {
-                GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
-                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-            }
-            else
-            {
-                GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
-                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-            }    */
+          /*
+          if (currentBallSelection == 0)
+          {
+              GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
+              ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+          }
+          else
+          {
+              GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
+              ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+          }    */
 
-            // Change material
-            target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+          // Change material
+          string name = target.name.Substring(0,7);
 
-        }
+          if (name == "TestBar")
+            for (int i = 0; i < target.transform.childCount; ++i)
+              target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
 
-        if(Input.GetKeyDown(KeyCode.Q))
+      else
+        target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+    }
+
+    if (Input.GetKeyDown(KeyCode.Q))
         {
             if (woodProgressBar.value < 0.7f)
                 return;
@@ -110,8 +114,6 @@ public class PlayerController : MonoBehaviour
             selectMass = mass2;
         }
     }
-
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -167,6 +169,7 @@ public class PlayerController : MonoBehaviour
         // if raycast hits, it checks if it hit an object with the tag changable
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range) && hit.collider.gameObject.CompareTag("changable"))
         {
+            Debug.Log(hit.collider.gameObject.name);
             if (target = hit.collider.gameObject)
                 return true;
             else
