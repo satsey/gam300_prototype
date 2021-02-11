@@ -62,12 +62,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Looking at object & within range
-        //CheckSee();
-
         if (Input.GetMouseButtonDown(0) && CheckSee() && target != null)
         {
-          /*
-          if (currentBallSelection == 0)
+          /*if (currentBallSelection == 0)
           {
               GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
               ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
@@ -76,7 +73,7 @@ public class PlayerController : MonoBehaviour
           {
               GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
               ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-          }    */
+          }*/
 
           // Change material
           string name = target.name.Substring(0,7);
@@ -85,11 +82,11 @@ public class PlayerController : MonoBehaviour
             for (int i = 0; i < target.transform.childCount; ++i)
               target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
 
-      else
-        target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
-    }
+          else
+            target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+        }
 
-    if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (woodProgressBar.value < 0.7f)
                 return;
@@ -162,19 +159,19 @@ public class PlayerController : MonoBehaviour
     private bool CheckSee()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Will contain the information of which object the raycast hit
         RaycastHit hit;
-
+        Physics.Raycast(ray, out hit, range);
+        Debug.Log(hit.collider.gameObject.name);
         // if raycast hits, it checks if it hit an object with the tag changable
-        if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range) && hit.collider.gameObject.CompareTag("changable"))
+        if (Physics.Raycast(ray, out hit, range) && hit.collider.gameObject.CompareTag("changable"))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             if (target = hit.collider.gameObject)
                 return true;
             else
                 return false;
-            
         }
         else
         {
