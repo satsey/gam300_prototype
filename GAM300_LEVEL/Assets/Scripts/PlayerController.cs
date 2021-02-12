@@ -81,12 +81,12 @@ public class PlayerController : MonoBehaviour
           // Change material
           string name = target.name.Substring(0,7);
 
-          if (name == "TestBar")
+          if (target.CompareTag("bar"))
             for (int i = 0; i < target.transform.childCount; ++i)
               target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
 
-      else
-        target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+          if (target.CompareTag("box"))
+            target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
     }
 
     if (Input.GetKeyDown(KeyCode.Q))
@@ -161,26 +161,24 @@ public class PlayerController : MonoBehaviour
     // Helper function to check if its looking at an object
     private bool CheckSee()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Will contain the information of which object the raycast hit
         RaycastHit hit;
-
+        
         // if raycast hits, it checks if it hit an object with the tag changable
-        if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range) && hit.collider.gameObject.CompareTag("changable"))
+        if (Physics.Raycast(ray, out hit, range))
         {
-            Debug.Log(hit.collider.gameObject.name);
-            if (target = hit.collider.gameObject)
-                return true;
-            else
-                return false;
-            
-        }
-        else
-        {
-            Debug.Log("Does not see anything");
-            return false;
+            if (hit.collider.gameObject.CompareTag("bar") || hit.collider.gameObject.CompareTag("box"))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+                if (target = hit.collider.gameObject)
+                    return true;
+                else
+                    return false;
+            }
         }
 
+        Debug.Log("Does not see anything");
+        return false;
     }
 }
