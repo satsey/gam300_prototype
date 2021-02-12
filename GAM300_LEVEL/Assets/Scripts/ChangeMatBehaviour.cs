@@ -33,13 +33,9 @@ public class ChangeMatBehaviour : MonoBehaviour
 
     public void ChangeProperty()
     {
-        //Debug.Log("Old: mat= " + GetComponent<MeshRenderer>().material + "        ; mass= " + GetComponent<Rigidbody>().mass);
+        if(!CompareTag("bar"))
+            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().selectMat;
 
-        //Debug.Log("Player selected: mat= " + test.GetComponent<PlayerController>().selectMat + "         ; mass= " + test.GetComponent<PlayerController>().selectMass);
-        GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().selectMat;
         GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
-
-
-        //Debug.Log("New: mat= " + GetComponent<MeshRenderer>().material + "        ; mass= " + GetComponent<Rigidbody>().mass);
     }
 }
