@@ -61,6 +61,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Puzzle2.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Assets\Scripts\WoodBall.cs" />
     <Compile Include="Assets\Scripts\ChangeMatBehaviour.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\DoorTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
