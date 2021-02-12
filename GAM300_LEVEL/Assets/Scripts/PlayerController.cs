@@ -66,30 +66,37 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && CheckSee() && target != null)
         {
-          /*
-          if (currentBallSelection == 0)
-          {
-              GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
-              ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-          }
-          else
-          {
-              GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
-              ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
-          }    */
+            /*
+            if (currentBallSelection == 0)
+            {
+                GameObject ballprefab = Instantiate(ball, transform.position, Quaternion.identity);
+                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+            }
+            else
+            {
+                GameObject ballprefab = Instantiate(woodball, transform.position, Quaternion.identity);
+                ballprefab.GetComponent<Rigidbody>().AddForce(cameraPos.forward * ballforce);
+            }    */
 
-          // Change material
-          string name = target.name.Substring(0,7);
+            // Change material
+            string name = target.name.Substring(0,7);
 
-          if (target.CompareTag("bar"))
-            for (int i = 0; i < target.transform.childCount; ++i)
-              target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
+            if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 0)
+            {
+                target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+                for (int i = 0; i < target.transform.childCount; ++i)
+                    target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
+            }
 
-          if (target.CompareTag("box"))
-            target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
-    }
+            else if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 1 && GameObject.Find("Destination").transform.GetChild(0).CompareTag("torch"))
+                if (target.GetComponent<Rigidbody>().mass < 10)
+                    Destroy(target);
 
-    if (Input.GetKeyDown(KeyCode.Q))
+            if (target.CompareTag("box"))
+                target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (woodProgressBar.value < 0.7f)
                 return;
@@ -139,14 +146,9 @@ public class PlayerController : MonoBehaviour
         }
         */
 
-
         //rb.MovePosition(new Vector3(transform.position.z + straffe, transform.position.y, 
         //    transform.position.x + translation));
-
-        
     }
-
-
     private void OnTriggerEnter(Collider other)
     {
 
@@ -173,7 +175,6 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("bar") || hit.collider.gameObject.CompareTag("box"))
             {
-                Debug.Log(hit.collider.gameObject.name);
                 if (target = hit.collider.gameObject)
                     return true;
                 else
