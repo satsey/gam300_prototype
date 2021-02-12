@@ -113,6 +113,9 @@ public class PlayerController : MonoBehaviour
             selectMat = mat2;
             selectMass = mass2;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     // Update is called once per frame
@@ -178,7 +181,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Debug.Log("Does not see anything");
+        //Debug.Log("Does not see anything");
         return false;
     }
 }

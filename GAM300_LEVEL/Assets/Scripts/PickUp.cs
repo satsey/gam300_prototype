@@ -23,13 +23,16 @@ public class PickUp : MonoBehaviour
         {
             target = hit.collider.gameObject;
 
-            if ((target.CompareTag("box") || target.CompareTag("pickable")) && target.GetComponent<Rigidbody>().mass < 10)
+            if ((target.CompareTag("box") || target.CompareTag("torch")) && target.GetComponent<Rigidbody>().mass < 10)
             {
                 target.GetComponent<BoxCollider>().enabled = false;
                 target.GetComponent<Rigidbody>().useGravity = false;
                 target.transform.position = theDest.position;
                 target.transform.parent = GameObject.Find("Destination").transform;
             }
+
+            else
+                target = null;
         }
 
         if (Input.GetKeyDown(KeyCode.R) && target != null)
