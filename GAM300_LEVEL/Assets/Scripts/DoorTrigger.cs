@@ -6,12 +6,15 @@ public class DoorTrigger : MonoBehaviour
 {
     public GameObject door;
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "box")
         {
-            door.transform.position += new Vector3(0, 1, 0);
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            if (col.gameObject.GetComponent<Rigidbody>().mass >= 10)
+            {
+                door.transform.position += new Vector3(0, 1, 0);
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+            }
         }
     }
 }

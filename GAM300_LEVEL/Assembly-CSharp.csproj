@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\Scripts\DoorTrigger2.cs" />
     <Compile Include="Assets\Scripts\Puzzle3.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
@@ -74,10 +75,9 @@
     <Compile Include="Assets\Scripts\WoodenShard.cs" />
     <Compile Include="Assets\Scripts\Puzzle1.cs" />
     <Compile Include="Assets\Scripts\WoodBall.cs" />
+    <Compile Include="Assets\Scripts\DoorTrigger3.cs" />
     <Compile Include="Assets\Scripts\ChangeMatBehaviour.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\DoorTrigger2.cs" />
-    <Compile Include="Assets\Scripts\DoorTrigger3.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
