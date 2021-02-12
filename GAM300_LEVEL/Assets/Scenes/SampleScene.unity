@@ -8187,7 +8187,7 @@ GameObject:
   - component: {fileID: 570175705}
   - component: {fileID: 570175706}
   m_Layer: 0
-  m_Name: test
+  m_Name: Material Swapping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8220,13 +8220,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodProgressBar: {fileID: 0}
-  BoxWoodMat: {fileID: 0}
+  BoxWoodMat: {fileID: 2100000, guid: 741e4973abff08849bb657a3ec11f1eb, type: 2}
   BoxWoodMass: 1
-  BoxMetalMat: {fileID: 0}
+  BoxMetalMat: {fileID: 2100000, guid: a0d07eec831b8b644b8e581b98022e32, type: 2}
   BoxMetalMass: 10
-  BarWoodMat: {fileID: 0}
+  BarWoodMat: {fileID: 2100000, guid: a304cdb9c006a8c489ebbb1aef1b821b, type: 2}
   BarWoodMass: 1
-  BarMetalMat: {fileID: 0}
+  BarMetalMat: {fileID: 2100000, guid: 43b6420a4f4669c46976f627249a0d0e, type: 2}
   BarMetalMass: 10
   selectMat: 0
   selectMass: 0
@@ -25583,7 +25583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodProgressBar: {fileID: 258211312}
-  BoxWoodMat: {fileID: 2100000, guid: 741e4973abff08849bb657a3ec11f1eb, type: 2}
+  BoxWoodMat: {fileID: 2100000, guid: f2facdab4f4a1c94a908624ff2418ec2, type: 2}
   BoxWoodMass: 1
   BoxMetalMat: {fileID: 2100000, guid: a0d07eec831b8b644b8e581b98022e32, type: 2}
   BoxMetalMass: 10
@@ -25592,7 +25592,7 @@ MonoBehaviour:
   BarMetalMat: {fileID: 2100000, guid: 43b6420a4f4669c46976f627249a0d0e, type: 2}
   BarMetalMass: 10
   selectMat: 0
-  selectMass: 0
+  selectMass: 1
   range: 10
   target: {fileID: 0}
   speed: 15

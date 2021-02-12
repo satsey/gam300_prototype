@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class ChangeMatBehaviour : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class ChangeMatBehaviour : MonoBehaviour
         if (player.GetComponent<PlayerController>().selectMat == PlayerController.MatEnum.WOOD)
         {
             Debug.Log("BoxWoodMat");
+            //Debug.Log(AssetDatabase.GetAssetPath(player.GetComponent<PlayerController>().BoxWoodMat));
+            Debug.Log(player.GetComponent<PlayerController>().BoxWoodMat);
             GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().BoxWoodMat;
             GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
         }

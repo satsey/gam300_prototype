@@ -93,11 +93,7 @@ public class PlayerController : MonoBehaviour
 
             // Change material
             if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 0)
-            {
                 target.GetComponent<ChangeMatBehaviour>().ChangeBarProperty();
-                //for (int i = 0; i < target.transform.childCount; ++i)
-                //    target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeBarProperty();
-            }
 
             else if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 1 && GameObject.Find("Destination").transform.GetChild(0).CompareTag("torch"))
                 if (target.GetComponent<Rigidbody>().mass < 10)
