@@ -8,9 +8,10 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "changable")
+        if (col.gameObject.tag == "box")
         {
-            door.transform.position += new Vector3(0, 4, 0);
+            door.transform.position += new Vector3(0, 1, 0);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
