@@ -6,18 +6,31 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum MatEnum
+    {
+        WOOD,
+        METAL
+    };
+
     public Slider woodProgressBar;
 
     // Materials
     // Wood
-    public Material mat1;
-    public float mass1 = 1;
+    public Material BoxWoodMat;
+    public float BoxWoodMass = 1;
     //Metal
-    public Material mat2;
-    public float mass2 = 10;
+    public Material BoxMetalMat;
+    public float BoxMetalMass = 10;
+
+    // Wood
+    public Material BarWoodMat;
+    public float BarWoodMass = 1;
+    //Metal
+    public Material BarMetalMat;
+    public float BarMetalMass = 10;
 
     // Selected material
-    public Material selectMat;
+    public MatEnum selectMat;
     public float selectMass;
 
     // Range
@@ -53,8 +66,8 @@ public class PlayerController : MonoBehaviour
         woodProgressBar.value = 0;*/
 
         // Set selected material & mass to wood(mat1)
-        selectMat = mat1;
-        selectMass = mass1;
+        selectMat = MatEnum.WOOD;
+        selectMass = 1;
         target = null;
     }
 
@@ -79,13 +92,11 @@ public class PlayerController : MonoBehaviour
             }    */
 
             // Change material
-            string name = target.name.Substring(0,7);
-
             if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 0)
             {
-                target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
-                for (int i = 0; i < target.transform.childCount; ++i)
-                    target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeProperty();
+                target.GetComponent<ChangeMatBehaviour>().ChangeBarProperty();
+                //for (int i = 0; i < target.transform.childCount; ++i)
+                //    target.transform.GetChild(i).GetComponent<ChangeMatBehaviour>().ChangeBarProperty();
             }
 
             else if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 1 && GameObject.Find("Destination").transform.GetChild(0).CompareTag("torch"))
@@ -93,7 +104,7 @@ public class PlayerController : MonoBehaviour
                     Destroy(target);
 
             if (target.CompareTag("box"))
-                target.GetComponent<ChangeMatBehaviour>().ChangeProperty();
+                target.GetComponent<ChangeMatBehaviour>().ChangeBoxProperty();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -110,15 +121,15 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Select Wood");
-            selectMat = mat1;
-            selectMass = mass1;
+            selectMat = MatEnum.WOOD;
+            selectMass = 1.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("Select Metal");
-            selectMat = mat2;
-            selectMass = mass2;
+            selectMat = MatEnum.METAL;
+            selectMass = 10.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

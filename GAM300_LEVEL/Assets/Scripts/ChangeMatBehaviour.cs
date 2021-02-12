@@ -28,14 +28,40 @@ public class ChangeMatBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void ChangeProperty()
+    public void ChangeBoxProperty()
     {
-        if(!CompareTag("bar"))
-            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().selectMat;
+        if (player.GetComponent<PlayerController>().selectMat == PlayerController.MatEnum.WOOD)
+        {
+            Debug.Log("BoxWoodMat");
+            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().BoxWoodMat;
+            GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
+        }
 
-        GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
+        else if (player.GetComponent<PlayerController>().selectMat == PlayerController.MatEnum.METAL)
+        {
+            Debug.Log("BoxMetalMat");
+            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().BoxMetalMat;
+            GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
+        }
+    }
+
+    public void ChangeBarProperty()
+    {
+        if (player.GetComponent<PlayerController>().selectMat == PlayerController.MatEnum.WOOD)
+        {
+            Debug.Log("BarWoodMat");
+            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().BarWoodMat;
+            GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
+        }
+
+        else if (player.GetComponent<PlayerController>().selectMat == PlayerController.MatEnum.METAL)
+        {
+            Debug.Log("BarMetalMat");
+            GetComponent<MeshRenderer>().material = player.GetComponent<PlayerController>().BarMetalMat;
+            GetComponent<Rigidbody>().mass = player.GetComponent<PlayerController>().selectMass;
+        }
     }
 }
