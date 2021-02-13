@@ -18,6 +18,7 @@ TagManager:
   - box
   - bar
   - torch
+  - spike
   layers:
   - Default
   - TransparentFX

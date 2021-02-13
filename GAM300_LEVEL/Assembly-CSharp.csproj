@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\Scripts\DoorTrigger4.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\BallBehaviour.cs" />
     <Compile Include="Assets\Scripts\WallButtonAdjustPos.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\DoorTrigger3.cs" />
     <Compile Include="Assets\Scripts\ChangeMatBehaviour.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
