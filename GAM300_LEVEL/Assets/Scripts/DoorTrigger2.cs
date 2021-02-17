@@ -6,6 +6,9 @@ public class DoorTrigger2 : MonoBehaviour
 {
     public GameObject collider1;
     public GameObject door;
+    public GameObject lamp;
+    public GameObject lamp2;
+    public Material newMat;
 
     void OnTriggerStay(Collider col)
     {
@@ -13,8 +16,11 @@ public class DoorTrigger2 : MonoBehaviour
         {
             if (col.gameObject.GetComponent<Rigidbody>().mass >= 10)
             {
-                door.transform.position += new Vector3(0, 1, 0);
+                door.transform.position -= new Vector3(0, 2.5f, 0);
+                Debug.Log("DT_2");
                 gameObject.GetComponent<BoxCollider>().enabled = false;
+                lamp.GetComponent<MeshRenderer>().material = newMat;
+                lamp2.GetComponent<MeshRenderer>().material = newMat;
             }
         }
     }

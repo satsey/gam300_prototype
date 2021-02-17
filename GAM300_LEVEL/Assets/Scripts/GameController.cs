@@ -25,6 +25,10 @@ public class GameController : MonoBehaviour
         {
             killed = true;
         }
+        else if (col.gameObject.tag == "torch" || col.gameObject.tag == "box")
+        {
+            col.transform.GetComponent<Object_Respawn>().RespawnObject();
+        }
     }
 
 }

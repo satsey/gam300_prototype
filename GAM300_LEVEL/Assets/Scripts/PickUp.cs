@@ -27,6 +27,8 @@ public class PickUp : MonoBehaviour
             {
                 target.GetComponent<BoxCollider>().enabled = false;
                 target.GetComponent<Rigidbody>().useGravity = false;
+                target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                
                 target.transform.position = theDest.position;
                 target.transform.parent = GameObject.Find("Destination").transform;
             }
@@ -40,6 +42,7 @@ public class PickUp : MonoBehaviour
             target.transform.parent = null;
             target.GetComponent<Rigidbody>().useGravity = true;
             target.GetComponent<BoxCollider>().enabled = true;
+            if (target.CompareTag("box")) { target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; }
             target = null;
         }
     }

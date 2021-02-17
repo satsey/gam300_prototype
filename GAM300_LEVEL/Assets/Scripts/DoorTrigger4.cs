@@ -12,7 +12,7 @@ public class DoorTrigger4 : MonoBehaviour
         {
             if (col.gameObject.GetComponent<Rigidbody>().mass >= 10)
             {
-                door.transform.position += new Vector3(0, 3, 0);
+                door.transform.position -= new Vector3(0, 5, 0);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }
