@@ -19,6 +19,8 @@ TagManager:
   - bar
   - torch
   - spike
+  - Wood
+  - Trigger1
   layers:
   - Default
   - TransparentFX

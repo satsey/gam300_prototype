@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Select Metal");
             selectMat = MatEnum.METAL;
-            selectMass = 10.0f;
+            selectMass = 50.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
