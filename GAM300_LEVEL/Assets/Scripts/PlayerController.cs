@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
     public enum MatEnum
     {
         WOOD,
@@ -93,13 +94,21 @@ public class PlayerController : MonoBehaviour
 
             // Change material
             if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 0)
+            {
+                SoundManagerScript.PlaySound("MatChange");
                 target.GetComponent<ChangeMatBehaviour>().ChangeBarProperty();
-
+            }
+                
             else if (target.CompareTag("bar") && GameObject.Find("Destination").transform.childCount == 1 && GameObject.Find("Destination").transform.GetChild(0).CompareTag("torch"))
                 if (target.GetComponent<Rigidbody>().mass < 10)
+                {
+                    SoundManagerScript.PlaySound("FireBurn");
                     Destroy(target);
+                }
+              
 
             if (target.CompareTag("box"))
+                SoundManagerScript.PlaySound("MatChange");
                 target.GetComponent<ChangeMatBehaviour>().ChangeBoxProperty();
         }
 
