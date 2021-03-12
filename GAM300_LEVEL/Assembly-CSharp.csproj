@@ -56,38 +56,43 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger2.cs" />
     <Compile Include="Assets\Scripts\Object_Respawn.cs" />
     <Compile Include="Assets\Scripts\Puzzle3.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\UI_Controller.cs" />
     <Compile Include="Assets\Scripts\Puzzle2.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger4.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\BallBehaviour.cs" />
     <Compile Include="Assets\Scripts\WallButtonAdjustPos.cs" />
-    <Compile Include="Assets\Scripts\WoodenShard.cs" />
-    <Compile Include="Assets\Trigger01.cs" />
     <Compile Include="Assets\Scripts\Puzzle1.cs" />
-    <Compile Include="Assets\Scripts\WoodBall.cs" />
-    <Compile Include="Assets\Scripts\DoorTrigger3.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ChangeMatBehaviour.cs" />
-    <Compile Include="Assets\Scripts\TriggerBoxes.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\BallBehaviour.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\Scripts\WoodenShard.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
+    <Compile Include="Assets\Trigger01.cs" />
+    <Compile Include="Assets\Scripts\WoodBall.cs" />
+    <Compile Include="Assets\Scripts\DoorTrigger3.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\UI_Controller.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\OutlineScript.cs" />
+    <Compile Include="Assets\Scripts\TriggerBoxes.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+     <None Include="Assets\QuickOutline\Readme.txt" />
+     <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
